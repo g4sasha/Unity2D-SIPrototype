@@ -6,6 +6,11 @@ public class InputListener : MonoBehaviour
 
 	private void Update()
 	{
+		ReadAttack();
+	}
+
+	private void FixedUpdate()
+	{
 		ReadMovement();
 	}
 
@@ -14,6 +19,14 @@ public class InputListener : MonoBehaviour
 		var horizontal = Input.GetAxisRaw("Horizontal");
 		var direction = new Vector2(horizontal, 0f);
 
-        _player.Movement.Move(direction, _player.Speed);
+        _player.Movement.Move(_player.transform, direction, _player.Speed);
     }
+
+	private void ReadAttack()
+	{
+		if (Input.GetButtonDown("Fire1"))
+		{
+			_player.Weapon.Shot(_player.Bullet, _player.transform.position);
+		}
+	}
 }
