@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d488585de607da14190e011088aef4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultEnemyPrefab: {fileID: 337105918737301353, guid: b80ff75e926d18e47b2158317e0701a0, type: 3}
+  _config: {fileID: 11400000, guid: 0c39f93a124869c4f9bdd293399e6747, type: 2}
 --- !u!114 &1835515125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1052154110126880807, guid: 52280a531181104469663bc6c7c8b2a9, type: 3}
