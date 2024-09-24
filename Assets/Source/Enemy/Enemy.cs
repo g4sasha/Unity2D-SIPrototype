@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : Unit
+public abstract class Enemy : Unit
 {
 	[field: SerializeField] public float Speed { get; private set; }
 	public IMovable Movement { get; private set; }
