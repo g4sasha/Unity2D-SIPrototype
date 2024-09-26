@@ -15,5 +15,5 @@ MonoBehaviour:
   <Prefab>k__BackingField: {fileID: 337105918737301353, guid: b80ff75e926d18e47b2158317e0701a0, type: 3}
   <SpawnDistanceInterval>k__BackingField: 1.2
   <SpawnIntervalMs>k__BackingField: 2500
-  <SpawnCount>k__BackingField: 12
+  <SpawnCount>k__BackingField: 8
   <WavesCount>k__BackingField: 5
