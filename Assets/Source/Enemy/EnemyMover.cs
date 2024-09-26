@@ -15,7 +15,7 @@ public class EnemyMover
 
     public async UniTaskVoid MoveCycle()
 	{
-		while (Application.isPlaying)
+		while (Player.Instance.Health > 0)
 		{
 			await UniTask.Delay((int)(_config.WaveStepSpeed * 1000f));
 
