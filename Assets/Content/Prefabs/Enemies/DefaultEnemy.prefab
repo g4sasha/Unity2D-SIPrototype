@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 1
-  <Speed>k__BackingField: 0.5
+  <StepInterval>k__BackingField: 1
+  <StepLength>k__BackingField: 1.2
 --- !u!95 &5383829500114355900
 Animator:
   serializedVersion: 5

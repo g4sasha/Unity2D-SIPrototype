@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class EnemyMovement : IMovable
 {
-	public void Move(Transform transform, Vector2 direction, float speed)
+	public void Move(Transform transform, Vector2 direction, float stepLength)
 	{
 		var normalizedDirection = direction.normalized;
-		transform.Translate(normalizedDirection * speed * Time.fixedDeltaTime);
+		transform.Translate(normalizedDirection * stepLength);
 	}
 }
