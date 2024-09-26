@@ -99,4 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 3
   <Speed>k__BackingField: 5
+  <AttackCooldown>k__BackingField: 0.5
   <Bullet>k__BackingField: {fileID: 5752571011359141479, guid: 3d4a804a5d5e72448989bc1a9d6a496c, type: 3}
