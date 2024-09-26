@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e487ba02612fd4d9fa8162d360160d, type: 3}
   m_Name: DefaultEnemySpawner
   m_EditorClassIdentifier: 
-  <Prefab>k__BackingField: {fileID: 337105918737301353, guid: b80ff75e926d18e47b2158317e0701a0, type: 3}
+  <Prefab>k__BackingField: {fileID: 4371173023072824365, guid: b80ff75e926d18e47b2158317e0701a0, type: 3}
   <SpawnDistanceInterval>k__BackingField: 1.2
   <WaveStepSpeed>k__BackingField: 2
   <SpawnIntervalMs>k__BackingField: 5000

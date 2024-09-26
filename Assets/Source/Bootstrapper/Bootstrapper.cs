@@ -1,22 +1,26 @@
+using Source.Enemy;
 using UnityEngine;
 
-public class Bootstrapper : MonoBehaviour
+namespace Source.Bootstrapper
 {
-	[SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
-	private EnemyMover _enemyMover;
-
-	private void Awake()
+	public class Bootstrapper : MonoBehaviour
 	{
-		_enemyMover = new EnemyMover(Enemy.Enemies, _enemySpawnerConfig);
-	}
+		[SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
+		private EnemyMover _enemyMover;
 
-	private void Start()
-	{
-		_enemyMover.MoveCycle().Forget();
-	}
+		private void Awake()
+		{
+			_enemyMover = new EnemyMover(Enemy.Enemy.Enemies, _enemySpawnerConfig);
+		}
 
-	private void Update()
-	{
-		_enemyMover.Enemies = Enemy.Enemies;
+		private void Start()
+		{
+			_enemyMover.MoveCycle().Forget();
+		}
+
+		private void Update()
+		{
+			_enemyMover.Enemies = Enemy.Enemy.Enemies;
+		}
 	}
 }

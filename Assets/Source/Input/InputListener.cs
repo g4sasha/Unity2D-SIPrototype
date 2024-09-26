@@ -1,42 +1,45 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class InputListener : MonoBehaviour
+namespace Source.Input
 {
-	[SerializeField] private Player _player;
-
-	private void Update()
+	public class InputListener : MonoBehaviour
 	{
-		ReadAttack();
-		ReadRestart();
-	}
+		[SerializeField] private Player.Player _player;
 
-    private void FixedUpdate()
-	{
-		ReadMovement();
-	}
-
-	private void ReadRestart()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
+		private void Update()
 		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			ReadAttack();
+			ReadRestart();
 		}
-    }
 
-    private void ReadMovement()
-    {
-		var horizontal = Input.GetAxisRaw("Horizontal");
-		var direction = new Vector2(horizontal, 0f);
-
-        _player.Movement.Move(_player.transform, direction, _player.Speed);
-    }
-
-	private void ReadAttack()
-	{
-		if (Input.GetButton("Fire1"))
+		private void FixedUpdate()
 		{
-			_player.Weapon.Shot(_player.Bullet, _player.transform.position);
+			ReadMovement();
+		}
+
+		private void ReadRestart()
+		{
+			if (UnityEngine.Input.GetKeyDown(KeyCode.R))
+			{
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			}
+		}
+
+		private void ReadMovement()
+		{
+			var horizontal = UnityEngine.Input.GetAxisRaw("Horizontal");
+			var direction = new Vector2(horizontal, 0f);
+
+			_player.Movement.Move(_player.transform, direction, _player.Speed);
+		}
+
+		private void ReadAttack()
+		{
+			if (UnityEngine.Input.GetButton("Fire1"))
+			{
+				_player.Weapon.Shot(_player.Bullet, _player.transform.position);
+			}
 		}
 	}
 }

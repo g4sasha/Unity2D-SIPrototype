@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public interface IWeapon
+namespace Source.Interfaces
 {
-	public void Shot(Bullet bullet, Vector2 startPosition);
+	public interface IWeapon
+	{
+		public void Shot(Bullet.Bullet bullet, Vector2 startPosition);
+	}
 }

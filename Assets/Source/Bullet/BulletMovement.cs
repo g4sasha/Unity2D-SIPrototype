@@ -1,10 +1,14 @@
 using UnityEngine;
+using Source.Interfaces;
 
-public class BulletMovement : IMovable
+namespace Source.Bullet
 {
-	public void Move(Transform transform, Vector2 direction, float speed)
+	public class BulletMovement : IMovable
 	{
-		var normalizedDirection = direction.normalized;
-		transform.Translate(normalizedDirection * speed * Time.fixedDeltaTime);
+		public void Move(Transform transform, Vector2 direction, float speed)
+		{
+			var normalizedDirection = direction.normalized;
+			transform.Translate(normalizedDirection * speed * Time.fixedDeltaTime);
+		}
 	}
 }

@@ -1,24 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthView : MonoBehaviour
+namespace Source.UIHealth
 {
-    [SerializeField] private Text _healthField;
-    [SerializeField] private string _healthFormat = "Health: {0}";
-
-    private void Start()
+    public class HealthView : MonoBehaviour
     {
-        Player.Instance.OnHealthChanged += Display;
-        Display(Player.Instance.Health);
-    }
+        [SerializeField] private Text _healthField;
+        [SerializeField] private string _healthFormat = "Health: {0}";
 
-    private void OnDestroy()
-    {
-        Player.Instance.OnHealthChanged -= Display;
-    }
+        private void Start()
+        {
+            Player.Player.Instance.OnHealthChanged += Display;
+            Display(Player.Player.Instance.Health);
+        }
 
-    public void Display(int health)
-    {
-        _healthField.text = string.Format(_healthFormat, health);
+        private void OnDestroy()
+        {
+            Player.Player.Instance.OnHealthChanged -= Display;
+        }
+
+        public void Display(int health)
+        {
+            _healthField.text = string.Format(_healthFormat, health);
+        }
     }
 }

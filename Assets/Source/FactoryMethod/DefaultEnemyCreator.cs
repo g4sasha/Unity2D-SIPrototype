@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class DefaultEnemyCreator : IEnemyCreator
+namespace Source.FactoryMethod
 {
-    public Enemy CreateEnemy(Enemy prefab) => Object.Instantiate(prefab);
+    public class DefaultEnemyCreator : IEnemyCreator
+    {
+        public Enemy.Enemy CreateEnemy(Enemy.Enemy prefab) => Object.Instantiate(prefab);
+    }
 }

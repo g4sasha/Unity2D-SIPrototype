@@ -1,10 +1,14 @@
 using UnityEngine;
+using Source.Interfaces;
 
-public class PlayerMovement : IMovable
+namespace Source.Player
 {
-	public void Move(Transform transform, Vector2 direction, float speed)
+	public class PlayerMovement : IMovable
 	{
-		var normalizedDirection = direction.normalized;
-		transform.Translate(normalizedDirection * speed * Time.fixedDeltaTime);
+		public void Move(Transform transform, Vector2 direction, float speed)
+		{
+			var normalizedDirection = direction.normalized;
+			transform.Translate(normalizedDirection * speed * Time.fixedDeltaTime);
+		}
 	}
 }
