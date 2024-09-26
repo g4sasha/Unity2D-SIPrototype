@@ -1,10 +1,14 @@
 using UnityEngine;
+using Source.Interfaces;
 
-public class EnemyMovement : IMovable
+namespace Source.Enemy
 {
-	public void Move(Transform transform, Vector2 direction, float stepLength)
+	public class EnemyMovement : IMovable
 	{
-		var normalizedDirection = direction.normalized;
-		transform.Translate(normalizedDirection * stepLength);
+		public void Move(Transform transform, Vector2 direction, float stepLength)
+		{
+			var normalizedDirection = direction.normalized;
+			transform.Translate(normalizedDirection * stepLength);
+		}
 	}
 }

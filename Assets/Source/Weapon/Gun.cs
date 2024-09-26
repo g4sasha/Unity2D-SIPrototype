@@ -1,31 +1,35 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Source.Interfaces;
 
-public class Gun : IWeapon
+namespace Source.Weapon
 {
-    public float Cooldown { get; private set; }
-    public bool IsReloading { get; private set; }
-
-    public Gun(float cooldown)
+    public class Gun : IWeapon
     {
-        Cooldown = cooldown;
-    }
+        public float Cooldown { get; private set; }
+        public bool IsReloading { get; private set; }
 
-    public void Shot(Bullet bullet, Vector2 position)
-    {
-        if (IsReloading)
+        public Gun(float cooldown)
         {
-            return;
+            Cooldown = cooldown;
         }
 
-        ApplyShot(bullet, position).Forget();
-    }
+        public void Shot(Bullet.Bullet bullet, Vector2 position)
+        {
+            if (IsReloading)
+            {
+                return;
+            }
 
-    public async UniTaskVoid ApplyShot(Bullet bullet, Vector2 position)
-    {
-        IsReloading = true;
-        GameObject.Instantiate(bullet, position, Quaternion.identity);
-        await UniTask.Delay((int)(Cooldown * 1000f));
-        IsReloading = false;
+            ApplyShot(bullet, position).Forget();
+        }
+
+        public async UniTaskVoid ApplyShot(Bullet.Bullet bullet, Vector2 position)
+        {
+            IsReloading = true;
+            GameObject.Instantiate(bullet, position, Quaternion.identity);
+            await UniTask.Delay((int)(Cooldown * 1000f));
+            IsReloading = false;
+        }
     }
 }

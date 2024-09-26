@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public interface IMovable
+namespace Source.Interfaces
 {
-	public void Move(Transform transform, Vector2 direction, float speed);
+	public interface IMovable
+	{
+		public void Move(Transform transform, Vector2 direction, float speed);
+	}
 }

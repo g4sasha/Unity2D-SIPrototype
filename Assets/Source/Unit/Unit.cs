@@ -1,21 +1,24 @@
 using UnityEngine;
 
-public abstract class Unit : MonoBehaviour
+namespace Source.Unit
 {
-    [field: SerializeField] public int Health { get; protected set; }
-
-    public virtual void ApplyDamage(int damage)
+    public abstract class Unit : MonoBehaviour
     {
-        if (damage < 0)
-        {
-            throw new System.ArgumentException("Damage cannot be negative");
-        }
+        [field: SerializeField] public int Health { get; protected set; }
 
-        Health -= damage;
-
-        if (Health <= 0)
+        public virtual void ApplyDamage(int damage)
         {
-            Destroy(gameObject);
+            if (damage < 0)
+            {
+                throw new System.ArgumentException("Damage cannot be negative");
+            }
+
+            Health -= damage;
+
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

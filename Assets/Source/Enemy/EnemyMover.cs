@@ -1,26 +1,29 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 
-public class EnemyMover
+namespace Source.Enemy
 {
-	public List<Enemy> Enemies { get; set; }
-	private EnemySpawnerConfig _config;
-
-	public EnemyMover(List<Enemy> enemies, EnemySpawnerConfig config)
+	public class EnemyMover
 	{
-		Enemies = enemies;
-		_config = config;
-	}
+		public List<Enemy> Enemies { get; set; }
+		private EnemySpawnerConfig _config;
 
-    public async UniTaskVoid MoveCycle()
-	{
-		while (Player.Instance.Health > 0)
+		public EnemyMover(List<Enemy> enemies, EnemySpawnerConfig config)
 		{
-			await UniTask.Delay((int)(_config.WaveStepSpeed * 1000f));
+			Enemies = enemies;
+			_config = config;
+		}
 
-			foreach (var enemy in Enemies)
+		public async UniTaskVoid MoveCycle()
+		{
+			while (Player.Player.Instance.Health > 0)
 			{
-				enemy.Step();
+				await UniTask.Delay((int)(_config.WaveStepSpeed * 1000f));
+
+				foreach (var enemy in Enemies)
+				{
+					enemy.Step();
+				}
 			}
 		}
 	}
