@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 public class EnemyMover
 {
@@ -15,7 +14,7 @@ public class EnemyMover
 
     public async UniTaskVoid MoveCycle()
 	{
-		while (Application.isPlaying)
+		while (Player.Instance.Health > 0)
 		{
 			await UniTask.Delay((int)(_config.WaveStepSpeed * 1000f));
 

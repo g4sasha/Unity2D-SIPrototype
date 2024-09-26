@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputListener : MonoBehaviour
 {
@@ -7,12 +8,21 @@ public class InputListener : MonoBehaviour
 	private void Update()
 	{
 		ReadAttack();
+		ReadRestart();
 	}
 
-	private void FixedUpdate()
+    private void FixedUpdate()
 	{
 		ReadMovement();
 	}
+
+	private void ReadRestart()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		}
+    }
 
     private void ReadMovement()
     {

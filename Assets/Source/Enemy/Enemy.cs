@@ -21,5 +21,11 @@ public abstract class Enemy : Unit
 	public void Step()
 	{
 		Movement.Move(transform, Vector2.down, StepLength);
+
+		if (transform.position.y < -4f)
+		{
+			Destroy(gameObject);
+			Player.Instance.ApplyDamage(1);
+		}
 	}
 }
