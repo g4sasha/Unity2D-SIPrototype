@@ -24,7 +24,7 @@ public class InputListener : MonoBehaviour
 
 	private void ReadAttack()
 	{
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetButton("Fire1"))
 		{
 			_player.Weapon.Shot(_player.Bullet, _player.transform.position);
 		}
