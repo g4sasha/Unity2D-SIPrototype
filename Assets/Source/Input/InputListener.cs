@@ -31,12 +31,15 @@ namespace Source.Input
 			var horizontal = UnityEngine.Input.GetAxisRaw("Horizontal");
 			var direction = new Vector2(horizontal, 0f);
 
-			_player.Movement.Move(_player.transform, direction, _player.Speed);
+			if (_player != null)
+			{
+				_player.Movement.Move(_player.transform, direction, _player.Speed);
+			}
 		}
 
 		private void ReadAttack()
 		{
-			if (UnityEngine.Input.GetButton("Fire1"))
+			if (UnityEngine.Input.GetButton("Fire1") && _player != null)
 			{
 				_player.Weapon.Shot(_player.Bullet, _player.transform.position);
 			}
