@@ -1,5 +1,6 @@
 using UnityEngine;
 using Source.Interfaces;
+using ScoreManagement;
 
 namespace Source.Bullet
 {
@@ -34,8 +35,11 @@ namespace Source.Bullet
         {
             if ((_enemyLayer & 1 << other.gameObject.layer) != 0)
             {
-                var enemy = other.gameObject.GetComponent<Unit.Unit>();
+                var enemy = other.gameObject.GetComponent<Unit.Unit>() as Enemy.Enemy;
+                var score = GameObject.Find("Score").GetComponent<Score>(); // TODO: FIX
+                
                 enemy.ApplyDamage(_damage);
+                score.AddScore(enemy.DropScore);
                 Destroy(gameObject);
             }
         }
