@@ -167,3 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 1
   <StepLength>k__BackingField: 1.2
+  <DropScore>k__BackingField: 1
