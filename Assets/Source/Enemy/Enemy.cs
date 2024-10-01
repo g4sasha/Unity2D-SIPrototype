@@ -7,6 +7,7 @@ namespace Source.Enemy
 	public abstract class Enemy : Unit.Unit
 	{
 		[field: SerializeField] public float StepLength { get; private set; }
+		[field: SerializeField] public int DropScore { get; private set; }
 		public IMovable Movement { get; private set; }
 		public static List<Enemy> Enemies { get; private set; } = new();
 

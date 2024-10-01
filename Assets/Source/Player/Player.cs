@@ -33,11 +33,6 @@ namespace Source.Player
 			Weapon = new Gun(AttackCooldown);
 		}
 
-		private void OnDestroy()
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		}
-
 		public override void ApplyDamage(int damage)
 		{
 			base.ApplyDamage(damage);
